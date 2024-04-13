@@ -1,0 +1,21 @@
+@bot.command()
+async def ran_card(ctx):
+    ran = random.choice(os.listdir('ranimage'))
+    
+    with open(f'ranimage/{ran}', 'rb') as f:
+        pictures = discord.File(f)
+        if 'rin' in ran:
+            await ctx.send('Редкость - обычная')
+        if 'isagi' in ran:
+            await ctx.send('Редкость - редкая')
+        if 'Akashi' in ran:
+            await ctx.send('Редкость - сверхредкая')
+        if 'mahor' in ran:
+            await ctx.send('Редкость - эпическая')
+        if 'sukuna' in ran:
+            await ctx.send('Редкость - мифическая ')
+        if 'gojo' in ran:
+            await ctx.send('Редкость - легендарная')
+        if 'goku' in ran:
+            await ctx.send('Редкость - супер-легендарная')
+        await ctx.send(file=pictures)
